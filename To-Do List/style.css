@@ -1,0 +1,219 @@
+:root {
+    --bg-color:#76b4bd;
+      background-image: linear-gradient(45deg, #bfff8b 0%, #2BD2FF 52%, #2BFF88 90%);    
+    --text-color: #333;
+    --container-bg-color: #1f68bd;
+    --container-border-color: #ccc;
+    --input-border-width: 1px
+    --input-border-color: #ccc;
+    --input-bg-color: #fff;
+    --input-text-color: #000;
+    --button-bg-color: #007bff;
+    --button-text-color: #fff;
+    --task-border-color: #ccc;
+    --completed-task-color: #888;
+    --timestamps-color: #303030;
+    --list-bg-color: #f0f0f0;
+    --list-border-color: #ccc;
+    --list-text-color: #333;
+    --filter-btn-bg-color: #1dbbb1;
+    --filter-btn-text-color: #fff;
+    --theme-toggle-color: #1bddd3;
+}
+
+body.dark {
+    --bg-color: #333;
+    --text-color: #000;
+    --container-bg-color: black;
+    --input-border-color: #555;
+    --input-bg-color:#303030;
+    --input-text-color: #fff;
+    --button-bg-color: #555;
+    --button-text-color: #f0f0f0;
+    --task-border-color: #555;
+    --completed-task-color: #bbb;
+    --timestamps-color: #bbb;
+    --list-bg-color: #303030;
+    --list-border-color: #222;
+    --list-text-color: #fff;
+    --filter-btn-bg-color: #e7a222;
+    --filter-btn-text-color: #222;
+    --theme-toggle-color: #e7a222;
+}
+
+body {
+    font-family: Georgia, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--container-bg-color);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--theme-toggle-color);
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+}
+
+
+.filter-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* background: linear-gradient(to right, #ff416c, #ff4b2b); */
+    background-color: var(--filter-btn-bg-color);
+    color: var(--filter-btn-text-color);
+    transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px;
+    border: 1px solid var(--task-border-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--list-bg-color);
+    color: var(--list-text-color);
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: var(--completed-task-color);
+}
+
+li .task-left {
+    display: flex;
+    align-items: center;
+}
+
+li .task-left span {
+    margin-left: 5px;
+}
+
+li .task-left input {
+    margin-right: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+li .task-right {
+    display: flex;
+    align-items: center;
+    color: #007bff;
+}
+
+li .task-left .timestamps {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+li .task-left .timestamps span {
+    font-size: 1rem;
+    margin-left: 10px;
+    color: var(--timestamps-color);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+li .task-right {
+    display: flex;
+    gap: 10px;
+    color: var(--timestamps-color);
+}
+
+li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+
+li button:hover {
+    color: var(--text-color-hover);
+}
+
+@media screen and (max-width: 500px) {
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    li .task-left .timestamps {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    li .task-right {
+        margin-top: 5px;
+    }
+    li button {
+        font-size: 1rem;
+    }
+    .container {
+        margin-top: 70px;
+        width: 80%;
+        height: auto
+    }
+    
+
+}
+    
+
+
+
